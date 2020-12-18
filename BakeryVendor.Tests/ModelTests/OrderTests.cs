@@ -31,7 +31,7 @@ namespace Bakery.Test
     public void GetId_CreatesUniqueIdForOrder_Id()
     {
       Order newOrder = new Order();
-      Assert.AreEqual(2, newOrder.AssignId());
+      Assert.AreEqual(1, newOrder.AssignId());
     }
 
   }
