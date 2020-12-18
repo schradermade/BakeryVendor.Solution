@@ -31,8 +31,24 @@ namespace Bakery.Test
     public void GetId_CreatesUniqueIdForOrder_Id()
     {
       Order newOrder = new Order();
-      Assert.AreEqual(1, newOrder.AssignId());
+      Assert.AreEqual(2, newOrder.AssignId());
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_True()
+    {
+      // Arrange
+      List<Order> newList = new List<Order> { };
+      Order newOrder = new Order();
+      newList.Add(newOrder);
+      Console.WriteLine(newList);
+      // Act
+      List<Order> result = Order.GetAll();
+      Console.WriteLine(result);
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    
   }
 }
