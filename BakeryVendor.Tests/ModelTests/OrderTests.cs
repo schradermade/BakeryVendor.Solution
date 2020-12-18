@@ -24,7 +24,7 @@ namespace Bakery.Test
     public void AssignId_CreatesInstanceOfId_Id()
     {
       Order newOrder = new Order();
-      Assert.AreEqual(typeof(Bread), newOrder.GetType());
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     // [TestMethod]
