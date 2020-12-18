@@ -77,5 +77,17 @@ namespace Bakery.Test
       Assert.AreEqual(date, result);
     }
 
+    [TestMethod]
+    public void SetPrice_ReturnsSetPrice_Price()
+    {
+      // Arrange
+      DateTime date = Order.TimeDateStamp();
+      Order newOrder = new Order(date);
+      // Act
+      double result = newOrder.Price;
+      // Assert
+      Assert.AreEqual(4, newOrder.Price);
+    }
+
   }
 }
