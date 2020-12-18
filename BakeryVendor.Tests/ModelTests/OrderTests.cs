@@ -17,7 +17,7 @@ namespace Bakery.Test
     public void GetOrder_CreatesInstanceOfItem_Order()
     {
       Order newOrder = new Order();
-      Assert.AreEqual(typeof(Bread), newOrder.GetType());
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
   }
 }
