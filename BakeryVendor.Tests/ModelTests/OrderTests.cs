@@ -27,12 +27,12 @@ namespace Bakery.Test
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
-    // [TestMethod]
-    // public void GetId_CreatesUniqueIdForOrder_Id()
-    // {
-    //   Order newOrder = new Order();
-    //   Assert.AreEqual(1, newOrder.GetId());
-    // }
+    [TestMethod]
+    public void GetId_CreatesUniqueIdForOrder_Id()
+    {
+      Order newOrder = new Order();
+      Assert.AreEqual(2, newOrder.AssignId());
+    }
 
   }
 }
