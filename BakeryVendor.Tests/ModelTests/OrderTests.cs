@@ -13,56 +13,69 @@ namespace Bakery.Test
       Order.ClearAll();
     }
 
-    [TestMethod]
-    public void GetOrder_CreatesInstanceOfItem_Order()
-    {
-      Order newOrder = new Order();
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
-    }
+    // [TestMethod]
+    // public void OrderConstructor_CreatesInstanceOfOrder_True()
+    // {
+    //   Order newOrder = new Order(date);
+    //   Assert.AreEqual(typeof(Order), newOrder.GetType());
+    // }
+
+    // [TestMethod]
+    // public void AssignId_CreatesInstanceOfId_Id()
+    // {
+    //   Order newOrder = new Order(date);
+    //   Assert.AreEqual(typeof(Order), newOrder.GetType());
+    // }
+
+    // [TestMethod]
+    // public void GetId_CreatesUniqueIdForOrder_Id()
+    // {
+    //   Order newOrder = new Order(date);
+    //   Assert.AreEqual(2, newOrder.AssignId());
+    // }
+
+    // [TestMethod]
+    // public void GetAll_ReturnsEmptyList_True()
+    // {
+    //   // Arrange
+    //   List<Order> newList = new List<Order> { };
+    //   Order newOrder = new Order();
+    //   newList.Add(newOrder);
+    //   Console.WriteLine(newList);
+    //   // Act
+    //   List<Order> result = Order.GetAll();
+    //   Console.WriteLine(result);
+    //   // Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
+
+    // [TestMethod]
+    // public void ClearAll_ClearsAllItems_True()
+    // {
+    //   // Arrange
+    //   Order newOrder0 = new Order(date);
+    //   Order newOrder1 = new Order(date);
+    //   List<Order> newList = new List<Order> { };
+
+    //   // Act
+    //   Order.ClearAll();
+    //   List<Order> result = Order.GetAll();
+
+    //   // Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
 
     [TestMethod]
-    public void AssignId_CreatesInstanceOfId_Id()
-    {
-      Order newOrder = new Order();
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
-    }
-
-    [TestMethod]
-    public void GetId_CreatesUniqueIdForOrder_Id()
-    {
-      Order newOrder = new Order();
-      Assert.AreEqual(2, newOrder.AssignId());
-    }
-
-    [TestMethod]
-    public void GetAll_ReturnsEmptyList_True()
+    public void GetDate_ReturnTimeDateProperty_True()
     {
       // Arrange
-      List<Order> newList = new List<Order> { };
-      Order newOrder = new Order();
-      newList.Add(newOrder);
-      Console.WriteLine(newList);
+      DateTime date = new DateTime(2021, 12, 18);
+      Order newOrder = new Order(date);
       // Act
-      List<Order> result = Order.GetAll();
-      Console.WriteLine(result);
+      DateTime result = Order.TimeDateStamp();
       // Assert
-      CollectionAssert.AreEqual(newList, result);
+      Assert.AreEqual(date, result);
     }
 
-    [TestMethod]
-    public void ClearAll_ClearsAllItems_True()
-    {
-      // Arrange
-      Order newOrder0 = new Order();
-      Order newOrder1 = new Order();
-      List<Order> newList = new List<Order> { };
-
-      // Act
-      Order.ClearAll();
-      List<Order> result = Order.GetAll();
-
-      // Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
   }
 }
