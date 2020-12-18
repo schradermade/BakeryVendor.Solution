@@ -58,7 +58,7 @@ namespace Bakery.Test
       List<Order> newList = new List<Order> { };
 
       // Act
-      // Order.ClearAll();
+      Order.ClearAll();
       List<Order> result = Order.GetAll();
 
       // Assert
