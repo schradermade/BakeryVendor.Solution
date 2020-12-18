@@ -49,6 +49,20 @@ namespace Bakery.Test
       CollectionAssert.AreEqual(newList, result);
     }
 
-    
+    [TestMethod]
+    public void ClearAll_ClearsAllItems_True()
+    {
+      // Arrange
+      Order newOrder0 = new Order();
+      Order newOrder1 = new Order();
+      List<Order> newList = new List<Order> { };
+
+      // Act
+      // Order.ClearAll();
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
