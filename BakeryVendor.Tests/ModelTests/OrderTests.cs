@@ -69,7 +69,7 @@ namespace Bakery.Test
     public void GetDate_ReturnTimeDateProperty_True()
     {
       // Arrange
-      DateTime date = new DateTime(2021, 12, 18);
+      DateTime date = Order.TimeDateStamp();
       Order newOrder = new Order(date);
       // Act
       DateTime result = Order.TimeDateStamp();
