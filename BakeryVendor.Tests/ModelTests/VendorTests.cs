@@ -22,7 +22,7 @@ namespace Bakery.Test
       Vendor newVendor = new Vendor(name, description);
 
       // Assert
-      Assert.AreEqual(typeof(Order), newVendor.GetType());
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
       
 
     }
