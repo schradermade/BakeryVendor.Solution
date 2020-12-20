@@ -38,6 +38,21 @@ namespace Bakery.Test
 
       // Assert
       Assert.AreEqual("Starbucks", result);
+    }
+
+    [TestMethod]
+    public void DescriptionProperty_SetsDescriptProperty_Description()
+    {
+      // Arrange
+      string name = "Starbucks";
+      string description = "coffee shop";
+      Vendor newVendor = new Vendor(name, description);
+
+      // Act
+      string result = newVendor.Description;
+
+      //Assert
+      Assert.AreEqual("candy shop", result);
 
     }
   }
