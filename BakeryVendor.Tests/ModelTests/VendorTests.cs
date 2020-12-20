@@ -37,7 +37,7 @@ namespace Bakery.Test
       string result = newVendor.Name;
 
       // Assert
-      Assert.AreEqual("Petes", result);
+      Assert.AreEqual("Starbucks", result);
 
     }
   }
