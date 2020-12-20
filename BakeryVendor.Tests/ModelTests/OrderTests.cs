@@ -156,7 +156,7 @@ namespace Bakery.Test
       double price1 = 10;
       Order newOrder0 = new Order(title0, price0);
       Order newOrder1 = new Order(title1, price1);
-      List<Order> newList = new List<Order> { newOrder0 };
+      List<Order> newList = new List<Order> { newOrder0, newOrder1 };
       
       // Act
       List<Order> result = Order.GetAll();
