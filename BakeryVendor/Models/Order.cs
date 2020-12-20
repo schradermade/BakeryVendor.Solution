@@ -6,15 +6,20 @@ namespace Bakery
 {
   public class Order
   {
-  public int Id { get; private set; }
+  
   public string Title { get; private set; }
-  public int Price { get; private set; }
-  public DateTime Date { get; private set; }
+  public double Price { get; private set; }
+  public int Id { get; private set; }
+  public DateTime TimeDateStamp { get; private set; }
 
   private static List<Order> _order = new List<Order> {};
 
-  public Order()
+  DateTime todaysDate = DateTime.Now;
+
+  public Order(string title, double price)
   {
+    Title = title;
+    Price = price;
     _order.Add(this);
     Id = AssignId();
   }
@@ -44,6 +49,11 @@ namespace Bakery
   {
     _order.Clear();
   }
+  
+  //   public static DateTime TimeDateStamp()
+  // {
+  //   return DateStamp.todaysDate;
+  // }
 
   }
 }
