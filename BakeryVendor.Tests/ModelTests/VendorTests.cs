@@ -67,7 +67,7 @@ namespace Bakery.Test
       int result = newVendor.Id;
 
       // Assert
-      Assert.AreEqual(4, result);
+      Assert.AreEqual(0, result);
     }
   }
 }
