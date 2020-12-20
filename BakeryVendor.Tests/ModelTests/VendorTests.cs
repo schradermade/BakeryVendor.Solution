@@ -100,7 +100,7 @@ namespace Bakery.Test
       Vendor newVendor0 = new Vendor(name, description);
       Vendor newVendor1 = new Vendor(name, description);
       Vendor newVendor2 = new Vendor(name, description);
-      List<Vendor> newList = new List<Vendor> { };
+      List<Vendor> newList = new List<Vendor> { newVendor0, newVendor1, newVendor2 };
 
       // Act
       List<Vendor> result = Vendor.GetAll();
