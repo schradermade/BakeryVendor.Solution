@@ -52,7 +52,7 @@ namespace Bakery.Test
       string result = newVendor.Description;
 
       //Assert
-      Assert.AreEqual("candy shop", result);
+      Assert.AreEqual("coffee shop", result);
 
     }
   }
