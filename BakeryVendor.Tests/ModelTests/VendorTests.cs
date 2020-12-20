@@ -67,7 +67,29 @@ namespace Bakery.Test
       int result = newVendor.Id;
 
       // Assert
-      Assert.AreEqual(0, result);
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void AssignId_ReturnsAssignedId_Id()
+    {
+      // Arrange
+      string name = "Starbucks";
+      string description = "coffee shop";
+      Vendor newVendor0 = new Vendor(name, description);
+      Vendor newVendor1 = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name, description);
+
+      // Act
+      int result0 = newVendor0.Id;
+      int result1 = newVendor1.Id;
+      int result2 = newVendor2.Id;
+
+      // Assert
+      Assert.AreEqual(4, result0);
+      Assert.AreEqual(5, result1);
+      Assert.AreEqual(6, result2);
+
     }
   }
 }
