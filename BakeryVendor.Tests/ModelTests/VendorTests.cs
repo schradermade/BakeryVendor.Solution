@@ -86,9 +86,9 @@ namespace Bakery.Test
       int result2 = newVendor2.Id;
 
       // Assert
-      Assert.AreEqual(4, result0);
-      Assert.AreEqual(5, result1);
-      Assert.AreEqual(6, result2);
+      Assert.AreEqual(1, result0);
+      Assert.AreEqual(2, result1);
+      Assert.AreEqual(3, result2);
 
     }
   }
