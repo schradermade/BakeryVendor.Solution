@@ -145,5 +145,25 @@ namespace Bakery.Test
       // Assert
       Assert.AreEqual(newOrder0, result);
     }
+
+    [TestMethod]
+    public void DeleteOrder_ReturnsEmptyList_True()
+    {
+      // Arrange
+      string title0 = "Starbucks";
+      double price0 = 10;
+      string title1 = "Starbucks";
+      double price1 = 10;
+      Order newOrder0 = new Order(title0, price0);
+      Order newOrder1 = new Order(title1, price1);
+      List<Order> newList = new List<Order> { };
+      newList.Add(newOrder0);
+      // newList.Add(newOrder1);
+      // Act
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
