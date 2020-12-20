@@ -53,7 +53,21 @@ namespace Bakery.Test
 
       //Assert
       Assert.AreEqual("coffee shop", result);
+    }
 
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Id()
+    {
+      // Arrange
+      string name = "Starbucks";
+      string description = "coffee shop";
+      Vendor newVendor = new Vendor(name, description);
+
+      // Act
+      int result = newVendor.Id;
+
+      // Assert
+      Assert.AreEqual(4, result);
     }
   }
 }
