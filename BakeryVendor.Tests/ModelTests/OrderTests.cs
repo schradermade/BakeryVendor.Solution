@@ -140,7 +140,7 @@ namespace Bakery.Test
       Order newOrder0 = new Order(title0, price0);
       Order newOrder1 = new Order(title1, price1);
       // Act
-      Order result = Order.Find(2);
+      Order result = Order.Find(1);
 
       // Assert
       Assert.AreEqual(newOrder0, result);
