@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using Bakery;
+using Bakery.Models;
 using System;
 
 namespace Bakery.Test
@@ -129,5 +129,21 @@ namespace Bakery.Test
       Assert.AreEqual(result, newOrder.Price);
     }
 
+    [TestMethod]
+    public void Find_ReturnsOrderById_Order()
+    {
+      // Arrange
+      string title0 = "Starbucks";
+      double price0 = 10;
+      string title1 = "Starbucks";
+      double price1 = 10;
+      Order newOrder0 = new Order(title0, price0);
+      Order newOrder1 = new Order(title1, price1);
+      // Act
+      Order result = Order.Find(2);
+
+      // Assert
+      Assert.AreEqual(newOrder0, result);
+    }
   }
 }
