@@ -23,7 +23,21 @@ namespace Bakery.Test
 
       // Assert
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
-      
+    }
+
+    [TestMethod]
+    public void NameProperty_SetsNameProperty_Name()
+    {
+      // Arrange
+      string name = "Starbucks";
+      string description = "coffee shop";
+      Vendor newVendor = new Vendor(name, description);
+
+      // Act
+      string result = newVendor.Name;
+
+      // Assert
+      Assert.AreEqual("Petes", result);
 
     }
   }
