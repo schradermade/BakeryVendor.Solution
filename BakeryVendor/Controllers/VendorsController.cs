@@ -20,7 +20,7 @@ namespace Bakery.Controllers
       return View();
     }
 
-    [HttpPost("/Vendors")]
+    [HttpPost("/vendors")]
     public ActionResult Create(string name, string description)
     {
       Vendor newVendor = new Vendor(name, description);
