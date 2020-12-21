@@ -107,6 +107,24 @@ namespace Bakery.Test
 
       // Assert
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void ClearAll_ReturnsClearedList_True()
+    {
+      // Arrange
+      string name = "Starbucks";
+      string description = "coffee shop";
+      Vendor newVendor0 = new Vendor(name, description);
+      Vendor newVendor1 = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name, description);
+      List<Vendor> newList = new List<Vendor> { newVendor0, newVendor1, newVendor2 };
+      Vendor.ClearAll();
+      // Act
+      List<Vendor> result = Vendor.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
 
     }
   }
