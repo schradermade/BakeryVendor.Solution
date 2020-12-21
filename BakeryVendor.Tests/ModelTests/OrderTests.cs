@@ -189,7 +189,7 @@ namespace Bakery.Test
       string result = newOrder.Description;
 
       // Assert
-      Assert.AreEqual("100 plain bagels", result);
+      Assert.AreEqual("100 Cheese bagels", result);
 
     }
   }
