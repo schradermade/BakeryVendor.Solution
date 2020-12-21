@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System;
 using Bakery;
 
-namespace Bakery
+namespace Bakery.Models
 {
   public class Vendor
   {
@@ -33,6 +33,14 @@ namespace Bakery
         }
         return uniqueId;
     }
+    public static Vendor Find(int findId)
+  {
+    return _vendors[findId -1];
+  }
+    public static void DeleteVendor(int id)
+  {
+    _vendors.RemoveAll(r => r.Id == id);
+  }
     public static void ClearAll()
     {
       _vendors.Clear();
