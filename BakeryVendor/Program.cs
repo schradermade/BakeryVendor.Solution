@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Bakery
 {
-  public class Programs
+  public class Program
   {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
       var host = new WebHostBuilder()
         .UseKestrel()
