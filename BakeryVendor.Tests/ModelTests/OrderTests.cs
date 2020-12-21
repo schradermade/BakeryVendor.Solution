@@ -17,9 +17,10 @@ namespace Bakery.Test
     public void OrderConstructor_CreatesInstanceOfOrder_True()
     {
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -27,9 +28,10 @@ namespace Bakery.Test
     public void AssignId_CreatesInstanceOfId_Id()
     {
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -37,9 +39,10 @@ namespace Bakery.Test
     public void GetId_CreatesUniqueIdForOrder_Int()
     { // Arrange
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       
       // Act
       int result = newOrder.Id;
@@ -53,9 +56,10 @@ namespace Bakery.Test
     {
       // Arrange
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       List<Order> newList = new List<Order> { };
       newList.Add(newOrder);
       Console.WriteLine(newList);
@@ -73,10 +77,11 @@ namespace Bakery.Test
     {
       // Arrange
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder0 = new Order(title, price);
-      Order newOrder1 = new Order(title, price);
+      Order newOrder0 = new Order(title, description, price);
+      Order newOrder1 = new Order(title, description, price);
       List<Order> newList = new List<Order> { };
 
       // Act
@@ -106,9 +111,10 @@ namespace Bakery.Test
     {
       // Arrange
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       // Act
       double result = newOrder.Price;
       // Assert
@@ -120,9 +126,10 @@ namespace Bakery.Test
     {
       // Arrange
       string title = "Starbucks";
+      string description = "100 Cheese bagels";
       double price = 10;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, price);
+      Order newOrder = new Order(title, description, price);
       // Act
       double result = newOrder.Price;
       // Assert
@@ -134,11 +141,13 @@ namespace Bakery.Test
     {
       // Arrange
       string title0 = "Starbucks";
+      string description0 = "100 Cheese bagels";
       double price0 = 10;
       string title1 = "Starbucks";
+      string description1 = "100 Cheese bagels";
       double price1 = 10;
-      Order newOrder0 = new Order(title0, price0);
-      Order newOrder1 = new Order(title1, price1);
+      Order newOrder0 = new Order(title0, description0, price0);
+      Order newOrder1 = new Order(title1, description1, price1);
       // Act
       Order result = Order.Find(1);
 
@@ -151,11 +160,13 @@ namespace Bakery.Test
     {
       // Arrange
       string title0 = "Starbucks";
+      string description0 = "100 Cheese bagels";
       double price0 = 10;
       string title1 = "Starbucks";
+      string description1 = "100 Cheese bagels";
       double price1 = 10;
-      Order newOrder0 = new Order(title0, price0);
-      Order newOrder1 = new Order(title1, price1);
+      Order newOrder0 = new Order(title0, description0, price0);
+      Order newOrder1 = new Order(title1, description1, price1);
       List<Order> newList = new List<Order> { newOrder0, newOrder1 };
       
       // Act
@@ -163,6 +174,23 @@ namespace Bakery.Test
 
       // Assert
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_ReturnsDescription_String()
+    {
+      // Arrange
+      string title = "Bagels";
+      string description = "100 Cheese bagels";
+      double price = 10;
+      Order newOrder = new Order(title, description, price);
+
+      // Act
+      string result = newOrder.Description;
+
+      // Assert
+      Assert.AreEqual("100 plain bagels", result);
+
     }
   }
 }
