@@ -2,23 +2,25 @@ using System.Collections.Generic;
 using System;
 using Bakery;
 
-namespace Bakery
+namespace Bakery.Models
 {
   public class Order
   {
   
   public string Title { get; private set; }
+  public string Description { get; private set; }
   public double Price { get; private set; }
-  public int Id { get; private set; }
   public DateTime TimeDateStamp { get; private set; }
+  public int Id { get; private set; }
 
   private static List<Order> _order = new List<Order> {};
 
   DateTime todaysDate = DateTime.Now;
 
-  public Order(string title, double price)
+  public Order(string title, string description, double price)
   {
     Title = title;
+    Description = description;
     Price = price;
     _order.Add(this);
     Id = AssignId();
@@ -48,6 +50,16 @@ namespace Bakery
   public static void ClearAll()
   {
     _order.Clear();
+  }
+
+  public static Order Find(int findId)
+  {
+    return _order[findId -1];
+  }
+
+  public static void DeleteOrder(int id)
+  {
+    _order.RemoveAll(r => r.Id == id);
   }
   
   //   public static DateTime TimeDateStamp()
