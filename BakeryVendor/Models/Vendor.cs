@@ -41,14 +41,14 @@ namespace Bakery.Models
   {
     _vendors.RemoveAll(r => r.Id == id);
   }
-    public static void ClearAll()
-    {
-      _vendors.Clear();
-    }
-    public static List<Vendor> GetAll()
-    {
-      return _vendors;
-    }
+  public static void ClearAll()
+  {
+    _vendors.Clear();
+  }
+  public static List<Vendor> GetAll()
+  {
+    return _vendors;
+  }
 
   }
 }
