@@ -10,13 +10,16 @@ namespace Bakery.Models
   public string Title { get; private set; }
   public string Description { get; private set; }
   public double Price { get; private set; }
-  string Date { get; set; }
+  public string Date { get; set; }
   public int Id { get; set; }
+
+  public int VendorId { get;set;}
 
   private static List<Order> _order = new List<Order> {};
 
-  public Order(string title, string description, double price, string date)
+  public Order(int vendorId, string title, string description, double price, string date)
   {
+    VendorId = vendorId;
     Title = title;
     Description = description;
     Price = price;

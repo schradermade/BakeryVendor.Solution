@@ -21,9 +21,11 @@ namespace Bakery.Controllers
     }
 
     [HttpPost("/orders")]
-    public ActionResult Create(string title, string description, double price, string date)
+    public ActionResult Create(int vendorId, string title, string description, double price, string date)
     {
       Order newOrder = new Order(title, description, price, date);
+      var vendor = Vendor.Find(vendorId);
+      vendor.AddOrder(newOrder);
       return RedirectToAction("Index");
     }
 
@@ -39,14 +41,6 @@ namespace Bakery.Controllers
     {
       Order foundOrder = Order.Find(id);
       return View(foundOrder);
-    }
-
-    [HttpPost("/orders/{id}")]
-    public ActionResult Destroy(int id)
-    {
-      Order foundOrder = Order.Find(id);
-      Order.DeleteOrder(foundOrder.Id);
-      return RedirectToAction("Index");
     }
   }
 }

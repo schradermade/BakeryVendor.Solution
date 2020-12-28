@@ -2,26 +2,25 @@
   Layout = "_layout";
 }
 
-<h1>Order Data</h1>
+<h1>Order Data for @Model.Id</h1>
 
 <br>
 
+<h3>Order Vendor:</h3>
+<p>@Model.Id</p>
+<br>
 <h3>Order Title:</h3>
 <p>@Model.Title</p>
-<br>
-<h3>Order Description:</h3>
-<p>@Model.Description</p>
 <br>
 <h3>Order Price:</h3>
 <p>@Model.Price</p>
 <br>
 <h3>Order Date:</h3>
-<p>@Model.TimeDateStamp</p>
+<p>@Model.Date</p>
 
 <br><br>
 
-<form action="/orders/@Model.Id" method="post">
-  <button type="submit" class="btn btn-danger">Delete Order</button>
-</form>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Place another Order</a>
+<a href='/vendors'>Go to Orders</a>
 
 <br><br><br><br>

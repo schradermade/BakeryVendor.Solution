@@ -40,6 +40,5 @@ namespace Bakery.Models
   {
     return _vendors;
   }
-
   }
 }

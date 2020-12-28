@@ -27,13 +27,6 @@ namespace Bakery.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/vendors/delete")]
-    public ActionResult DeleteAll()
-    {
-      Vendor.ClearAll();
-      return RedirectToAction("Index");
-    }
-
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
@@ -45,8 +38,15 @@ namespace Bakery.Controllers
       return View(model);
     }
 
-    [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string title, string description, int price, string date)
+    [HttpPost("/vendors/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearAll();
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string title, string description, double price, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
