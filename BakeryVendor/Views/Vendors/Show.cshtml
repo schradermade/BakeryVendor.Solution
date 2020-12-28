@@ -1,0 +1,21 @@
+@{
+  Layout = "_layout";
+}
+
+<h1>Vendor Data</h1>
+
+<br>
+
+<h3>Vendor Name:</h3>
+<p>@Model.Name</p>
+
+<h3>Vendor Description:</h3>
+<p>@Model.Description</p>
+
+<br><br>
+
+<form action="/vendors/@Model.Id" method="post">
+  <button type="submit" class="btn btn-danger">Delete Vendor</button>
+</form>
+
+<br><br><br><br>

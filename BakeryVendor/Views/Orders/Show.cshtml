@@ -1,0 +1,27 @@
+@{
+  Layout = "_layout";
+}
+
+<h1>Order Data</h1>
+
+<br>
+
+<h3>Order Title:</h3>
+<p>@Model.Title</p>
+<br>
+<h3>Order Description:</h3>
+<p>@Model.Description</p>
+<br>
+<h3>Order Price:</h3>
+<p>@Model.Price</p>
+<br>
+<h3>Order Date:</h3>
+<p>@Model.TimeDateStamp</p>
+
+<br><br>
+
+<form action="/orders/@Model.Id" method="post">
+  <button type="submit" class="btn btn-danger">Delete Order</button>
+</form>
+
+<br><br><br><br>
