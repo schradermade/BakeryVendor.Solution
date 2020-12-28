@@ -23,7 +23,7 @@ namespace Bakery.Controllers
     [HttpPost("/orders")]
     public ActionResult Create(int vendorId, string title, string description, double price, string date)
     {
-      Order newOrder = new Order(title, description, price, date);
+      Order newOrder = new Order(vendorId, title, description, price, date);
       var vendor = Vendor.Find(vendorId);
       vendor.AddOrder(newOrder);
       return RedirectToAction("Index");
@@ -40,7 +40,11 @@ namespace Bakery.Controllers
     public ActionResult Show(int id)
     {
       Order foundOrder = Order.Find(id);
-      return View(foundOrder);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(foundOrder.VendorId);
+      model.Add("vendor", foundVendor);
+      model.Add("order", foundOrder);
+      return View(model);
     }
   }
 }
