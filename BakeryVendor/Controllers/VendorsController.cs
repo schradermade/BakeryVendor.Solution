@@ -44,8 +44,7 @@ namespace Bakery.Controllers
       Vendor.ClearAll();
       return RedirectToAction("Index");
     }
-
-// remove
+    
     [HttpGet("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string title, string description, double price, string date)
     {

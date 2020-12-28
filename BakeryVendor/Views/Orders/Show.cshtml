@@ -2,25 +2,25 @@
   Layout = "_layout";
 }
 
-<h1>Order Data for @Model.Id</h1>
+<h1>Order Data for @Model["order"].Id</h1>
 
 <br>
 
 <h3>Order Vendor:</h3>
-<p>@Model.Id</p>
+<p>@Model["vendor"].Name</p>
 <br>
 <h3>Order Title:</h3>
-<p>@Model.Title</p>
+<p>@Model["order"].Title</p>
 <br>
 <h3>Order Price:</h3>
-<p>@Model.Price</p>
+<p>@Model["order"].Price</p>
 <br>
 <h3>Order Date:</h3>
-<p>@Model.Date</p>
+<p>@Model["order"].Date</p>
 
 <br><br>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Place another Order</a>
+<a href='/orders/new'>Place another Order</a>
 <a href='/vendors'>Go to Orders</a>
 
 <br><br><br><br>
