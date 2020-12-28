@@ -21,9 +21,9 @@ namespace Bakery.Controllers
     }
 
     [HttpPost("/orders")]
-    public ActionResult Create(string title, string description, double price)
+    public ActionResult Create(string title, string description, double price, string date)
     {
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(title, description, price, date);
       return RedirectToAction("Index");
     }
 

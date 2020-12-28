@@ -10,32 +10,23 @@ namespace Bakery.Models
     public string Description { get; set; }
     public int Id { get; set; }
     private static List<Vendor> _vendors = new List<Vendor> { };
+    public List<Order> Orders { get; set; }
 
     public Vendor(string name, string description)
     {
       Name = name;
       Description = description;
       _vendors.Add(this);
-      Id = AssignId();
-    }
-    public int AssignId()
-    {
-      int uniqueId = 0;
-      for (int i = 1; i <= 100; i++)
-        {
-          if(_vendors.Exists(x => x.Id == i))
-          {
-          }
-          else
-          {
-            return uniqueId += i;
-          }
-        }
-        return uniqueId;
+      Id = _vendors.Count;
+      Orders = new List<Order> { };
     }
     public static Vendor Find(int findId)
   {
     return _vendors[findId -1];
+  }
+  public void AddOrder(Order order)
+  {
+    Orders.Add(order);
   }
     public static void DeleteVendor(int id)
   {

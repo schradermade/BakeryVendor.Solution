@@ -1,21 +1,17 @@
-@{
-  Layout = "_layout";
-}
+@using Bakery.Models;
 
-<h1>Vendor Data</h1>
+<h1>All Orders for this Vendor</h1>
 
 <br>
 
-<h3>Vendor Name:</h3>
-<p>@Model.Name</p>
+<ol>
+  @foreach (Order order in @Model["orders"])
+  {
+    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+  }
+</ol>
 
-<h3>Vendor Description:</h3>
-<p>@Model.Description</p>
-
-<br><br>
-
-<form action="/vendors/@Model.Id" method="post">
-  <button type="submit" class="btn btn-danger">Delete Vendor</button>
-</form>
-
-<br><br><br><br>
+<p><a href='/vendors/@Model["vendor"].Id/items/new'>Add new Order</a></p>
+<p><a href='/vendors'>Return to Vendor List</a></p>
+<p><a href='/'>Return Home</a></p>
