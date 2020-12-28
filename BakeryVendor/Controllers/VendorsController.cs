@@ -45,12 +45,13 @@ namespace Bakery.Controllers
       return RedirectToAction("Index");
     }
 
+// remove
     [HttpGet("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string title, string description, double price, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order foundOrder = new Order(title, description, price, date);
+      Order foundOrder = new Order(vendorId, title, description, price, date);
       foundVendor.AddOrder(foundOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
@@ -64,6 +65,13 @@ namespace Bakery.Controllers
       Vendor foundVendor = Vendor.Find(id);
       Vendor.DeleteVendor(foundVendor.Id);
       return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{id}/orders/new")]
+    public ActionResult NewOrder(int id)
+    {
+      Vendor foundVendor = Vendor.Find(id);
+      return View(foundVendor);
     }
   }
 }
