@@ -198,5 +198,23 @@ namespace Bakery.Test
       // Assert
       Assert.AreEqual("100 Cheese bagels", result);
     }
+
+    [TestMethod]
+    public void VendorIdProperty_ReturnsVendorId_Int()
+    {
+      // Arrange
+      string title = "Bagels";
+      string description = "100 Cheese bagels";
+      double price = 10;
+      string date = "11/25/2020";
+      int vendorId = 1;
+      Order newOrder = new Order(vendorId, title, description, price, date);
+
+      // Act
+      int result = newOrder.VendorId;
+
+      // Assert
+      Assert.AreEqual(2, result);
+    }
   }
 }
