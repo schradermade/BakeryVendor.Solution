@@ -19,8 +19,10 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
+      string date = "11/25/2020";
+      int vendorId = 1;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(vendorId, title, description, price, date);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -30,8 +32,10 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
+      string date = "11/25/2020";
+      int vendorId = 1;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(vendorId, title, description, price, date);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -41,8 +45,10 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
+      string date = "11/25/2020";
+      int vendorId = 1;
       // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      Order newOrder = new Order(vendorId, title, description, price, date);
       
       // Act
       int result = newOrder.Id;
@@ -58,8 +64,9 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
-      // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      string date = "11/25/2020";
+      int vendorId = 1;
+      Order newOrder = new Order(vendorId, title, description, price, date);
       List<Order> newList = new List<Order> { };
       newList.Add(newOrder);
       Console.WriteLine(newList);
@@ -79,9 +86,11 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
-      // DateTime date = Order.TimeDateStamp();
-      Order newOrder0 = new Order(title, description, price);
-      Order newOrder1 = new Order(title, description, price);
+      string date = "11/25/2020";
+      int vendorId0 = 1;
+      int vendorId1 = 2;
+      Order newOrder0 = new Order(vendorId0, title, description, price, date);
+      Order newOrder1 = new Order(vendorId1, title, description, price, date);
       List<Order> newList = new List<Order> { };
 
       // Act
@@ -92,20 +101,6 @@ namespace Bakery.Test
       CollectionAssert.AreEqual(newList, result);
     }
 
-    // [TestMethod]
-    // public void TimeDateStamp_ReturnTimeDateProperty_True()
-    // {
-    //   // Arrange
-    //   // DateTime date = Order.TimeDateStamp();
-    //   int newId = 5;
-    //   string title = "Starbucks";
-    //   Order newOrder = new Order(title, newId);
-    //   // Act
-    //   ;
-    //   // Assert
-    //   Assert.AreEqual(title, result);
-    // }
-
     [TestMethod]
     public void SetPrice_ReturnsSetPrice_Price()
     {
@@ -113,8 +108,9 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
-      // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      string date = "11/25/2020";
+      int vendorId = 1;
+      Order newOrder = new Order(vendorId, title, description, price, date);
       // Act
       double result = newOrder.Price;
       // Assert
@@ -128,8 +124,9 @@ namespace Bakery.Test
       string title = "Starbucks";
       string description = "100 Cheese bagels";
       double price = 10;
-      // DateTime date = Order.TimeDateStamp();
-      Order newOrder = new Order(title, description, price);
+      string date = "11/25/2020";
+      int vendorId = 1;
+      Order newOrder = new Order(vendorId, title, description, price, date);
       // Act
       double result = newOrder.Price;
       // Assert
@@ -143,11 +140,15 @@ namespace Bakery.Test
       string title0 = "Starbucks";
       string description0 = "100 Cheese bagels";
       double price0 = 10;
+      string date0 = "11/25/2020";
+      int vendorId0 = 1;
       string title1 = "Starbucks";
       string description1 = "100 Cheese bagels";
       double price1 = 10;
-      Order newOrder0 = new Order(title0, description0, price0);
-      Order newOrder1 = new Order(title1, description1, price1);
+      string date1 = "11/25/2020";
+      int vendorId1 = 2;
+      Order newOrder0 = new Order(vendorId0, title0, description0, price0, date0);
+      Order newOrder1 = new Order(vendorId1, title1, description1, price1, date1);
       // Act
       Order result = Order.Find(1);
 
@@ -162,11 +163,15 @@ namespace Bakery.Test
       string title0 = "Starbucks";
       string description0 = "100 Cheese bagels";
       double price0 = 10;
+      string date0 = "11/25/2020";
+      int vendorId0 = 1;
       string title1 = "Starbucks";
       string description1 = "100 Cheese bagels";
       double price1 = 10;
-      Order newOrder0 = new Order(title0, description0, price0);
-      Order newOrder1 = new Order(title1, description1, price1);
+      string date1 = "11/25/2020";
+      int vendorId1 = 1;
+      Order newOrder0 = new Order(vendorId0, title0, description0, price0, date0);
+      Order newOrder1 = new Order(vendorId1, title1, description1, price1, date1);
       List<Order> newList = new List<Order> { newOrder0, newOrder1 };
       
       // Act
@@ -183,7 +188,9 @@ namespace Bakery.Test
       string title = "Bagels";
       string description = "100 Cheese bagels";
       double price = 10;
-      Order newOrder = new Order(title, description, price);
+      string date = "11/25/2020";
+      int vendorId = 1;
+      Order newOrder = new Order(vendorId, title, description, price, date);
 
       // Act
       string result = newOrder.Description;
@@ -191,7 +198,5 @@ namespace Bakery.Test
       // Assert
       Assert.AreEqual("100 Cheese bagels", result);
     }
-
-    
   }
 }
